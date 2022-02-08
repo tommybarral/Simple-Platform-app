@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:io';
-import 'MyHomePageAndroid.dart';
+//import 'MyHomePageAndroid.dart';
+import 'MyHomePageiOS.dart';
 
 void main()  {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,9 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      // condition ternaire permettant à l'application de changer selon la plateforme.
-      // ternary operator allow to the app to change depend on the device.
-      home: MyHomePageAndroid(),
+      home: MyHomePageiOS(),
     );
   }
 }
