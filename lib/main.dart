@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'MyHomePageAndroid.dart';
+import 'dart:io';
+import 'MyHomePageAndroid.dart';
 import 'MyHomePageiOS.dart';
 
 void main()  {
   WidgetsFlutterBinding.ensureInitialized();
-  // interdir l'orientation de l'application
-  // impossible to put the app in portrait or landscape mod.
+  // interdire l'orientation de l'application
+  // impossible to change the app orientation (portrait or landscape).
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home: MyHomePageiOS(),
+      home: Platform.isAndroid ? MyHomePageAndroid() : MyHomePageiOS(),
     );
   }
 }
